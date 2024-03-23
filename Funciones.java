@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class taller1 {
+public class Funciones {
 
     public static int cuadrado(int n) {
         return n*n;
