@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Funciones {
 
     public static int cuadrado(int n) {
@@ -22,33 +20,33 @@ public class Funciones {
         }
         return n *factorial(n-1);
     } 
-    // public static boolean esPrimo(int n){
-    //     if (n == 1 ){
-    //         return false;
-    //     }
-    //     for(int i =2;i*i<=n;i++){
-    //         if(n % i == 0){
-    //             return false;
-    //         }
-    //     }
-    //     return true;
-    // }
-
-    public static boolean esPrimo(int n) {
-        boolean[] esPrimo = new boolean[n+1];
-        Arrays.fill(esPrimo, true);
-        esPrimo[0] = esPrimo[1] = false;
-    
-        for (int i = 2; i * i <= n; i++) {
-            if (esPrimo[i]) {
-                for (int j = i * i; j <= n; j += i) {
-                    esPrimo[j] = false;
-                }
+    public static boolean esPrimo(int n){
+        if (n == 1 ){
+            return false;
+        }
+        for(int i =2;i*i<=n;i++){
+            if(n % i == 0){
+                return false;
             }
         }
+        return true;
+    }
+
+    // public static boolean esPrimo(int n) {
+    //     boolean[] esPrimo = new boolean[n+1];
+    //     Arrays.fill(esPrimo, true);
+    //     esPrimo[0] = esPrimo[1] = false;
     
-        return esPrimo[n];
-    } 
+    //     for (int i = 2; i * i <= n; i++) {
+    //         if (esPrimo[i]) {
+    //             for (int j = i * i; j <= n; j += i) {
+    //                 esPrimo[j] = false;
+    //             }
+    //         }
+    //     }
+    
+    //     return esPrimo[n];
+    // } 
     public static int sumatoria(int [] numeros){
         int sumatTotal =0;
         for (int i=0; i<numeros.length;i++){
@@ -97,20 +95,7 @@ public class Funciones {
         }
         return true;
     }
-    // public static void main(String[] args) {
-    //     System.out.println(cuadrado(4));
-    //     System.out.println(distancia(3.5f, 4)); // para que sea float se le pone la f al final sino por defecto es double
-    //     System.out.println(EsPar(4));
-    //     System.out.println(esBisiesto(800));
-    //     System.out.println(factorial(5));
-    //     System.out.println(esPrimo(9025191));
-    //     System.out.println(sumatoria(new int[]{1,2,3,4,5}));
-    //     System.out.println(busqueda(new int[]{1,2,3,4,5}, 3));
-    //     System.out.println(todosPares(new int[]{4,2,6,4,12222}));
-    //     System.out.println(esPrefijo("hola", "holamundo"));
-    //     System.out.println(esSufijo("tes", "mates"));
 
-    // }
 
 }
 
