@@ -97,20 +97,20 @@ public class taller1 {
         }
         return true;
     }
-    public static void main(String[] args) {
-        // System.out.println(cuadrado(4));
-        // System.out.println(distancia(3.5f, 4)); // para que sea float se le pone la f al final sino por defecto es double
-        // System.out.println(EsPar(4));
-        // System.out.println(esBisiesto(800));
-        // System.out.println(factorial(5));
-        System.out.println(esPrimo(9025191));
-        // System.out.println(sumatoria(new int[]{1,2,3,4,5}));
-        // System.out.println(busqueda(new int[]{1,2,3,4,5}, 3));
-        // System.out.println(todosPares(new int[]{4,2,6,4,12222}));
-        // System.out.println(esPrefijo("hola", "holamundo"));
-        // System.out.println(esSufijo("tes", "mates"));
+    // public static void main(String[] args) {
+    //     System.out.println(cuadrado(4));
+    //     System.out.println(distancia(3.5f, 4)); // para que sea float se le pone la f al final sino por defecto es double
+    //     System.out.println(EsPar(4));
+    //     System.out.println(esBisiesto(800));
+    //     System.out.println(factorial(5));
+    //     System.out.println(esPrimo(9025191));
+    //     System.out.println(sumatoria(new int[]{1,2,3,4,5}));
+    //     System.out.println(busqueda(new int[]{1,2,3,4,5}, 3));
+    //     System.out.println(todosPares(new int[]{4,2,6,4,12222}));
+    //     System.out.println(esPrefijo("hola", "holamundo"));
+    //     System.out.println(esSufijo("tes", "mates"));
 
-    }
+    // }
 
 }
 
