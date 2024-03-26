@@ -1,102 +1,108 @@
-public class Funciones {
+class Funciones {
 
-    public static int cuadrado(int n) {
-        return n*n;
+    int cuadrado(int x) {
+        return x * x;
     }
-    public static float distancia(float x, float y) { // pitagoras
-        return (float) Math.sqrt(x*x + y*y);
+
+    double distancia(double x, double y) { // pitagoras
+        return (double) Math.sqrt(x * x + y * y);
     }
-    public static boolean EsPar(int n) {
-        return n%2 == 0;
+
+    boolean esPar(int n) {
+        return n % 2 == 0;
     }
-    public static boolean esBisiesto(int n) {
-        if((n%4==0 & n%100!=0) || n%400==0 )
+
+    boolean esBisiesto(int n) {
+        if ((n % 4 == 0 & n % 100 != 0) || n % 400 == 0)
             return true;
         return false;
     }
-    public static int factorial(int n){
-        if(n == 0){
+
+    int factorialIterativo(int n) {
+        int total = 1;
+        for(int i = 1; i <=n; i++){
+            total = total *i;
+        }
+        return 0;
+    }
+
+    int factorialRecursivo(int n) {
+        if (n == 0) {
             return 1;
         }
-        return n *factorial(n-1);
-    } 
-    public static boolean esPrimo(int n){
-        if (n == 1 ){
+        return n * factorialRecursivo(n - 1);
+    }
+
+    boolean esPrimo(int n) {
+        if (n == 1) {
             return false;
         }
-        for(int i =2;i*i<=n;i++){
-            if(n % i == 0){
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
                 return false;
             }
         }
         return true;
     }
 
-    // public static boolean esPrimo(int n) {
-    //     boolean[] esPrimo = new boolean[n+1];
-    //     Arrays.fill(esPrimo, true);
-    //     esPrimo[0] = esPrimo[1] = false;
-    
-    //     for (int i = 2; i * i <= n; i++) {
-    //         if (esPrimo[i]) {
-    //             for (int j = i * i; j <= n; j += i) {
-    //                 esPrimo[j] = false;
-    //             }
-    //         }
-    //     }
-    
-    //     return esPrimo[n];
-    // } 
-    public static int sumatoria(int [] numeros){
-        int sumatTotal =0;
-        for (int i=0; i<numeros.length;i++){
+    int sumatoria(int[] numeros) {
+        int sumatTotal = 0;
+        for (int i = 0; i < numeros.length; i++) {
             sumatTotal += numeros[i];
         }
         return sumatTotal;
 
     }
-    public static int busqueda(int[] secuencia, int numeroABuscar){
-        for(int i=0; i<secuencia.length;i++){
-            if (secuencia[i] == numeroABuscar){
+
+    int busqueda(int[] numeros, int buscado) {
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] == buscado) {
                 return i;
             }
         }
         return -1;
 
     }
-    public static boolean todosPares(int [] numeros){
-        for(int i=0;i<numeros.length;i++){
-            if (numeros[i]%2 ==1){
-                return false;
+    boolean tienePrimo(int[] numeros) {
+        for(int i=0; i<numeros.length;i++){
+            if(esPrimo(numeros[i]) == true){
+                return true;
             }
         }
-        return true;
+        return false;
     }
-    public static boolean esPrefijo(String a, String b){
-        if(a.length() >b.length()){
-            return false;
-        }        
-        for(int i=0; i<a.length();i++){
-            if(a.charAt(i) != b.charAt(i)){
+
+    boolean todosPares(int[] numeros) {
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] % 2 == 1) {
                 return false;
             }
         }
         return true;
     }
 
-    public static boolean esSufijo(String a, String b){
-        if(a.length() >b.length()){
+    boolean esPrefijo(String s1, String s2) {
+        if (s1.length() > s2.length()) {
             return false;
-        }        
-        for(int i=0; i<a.length();i++){
-            if(a.charAt(a.length()-i-1) != b.charAt(b.length()-i-1)){
+        }
+        for (int i = 0; i < s1.length(); i++) {
+            if (s1.charAt(i) != s2.charAt(i)) {
                 return false;
             }
         }
         return true;
     }
 
+    boolean esSufijo(String s1, String s2) {
+        if (s1.length() > s2.length()) {
+            return false;
+        }
+        for (int i = 0; i < s1.length(); i++) {
+            if (s1.charAt(s1.length() - i - 1) != s2.charAt(s2.length() - i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 }
-
-

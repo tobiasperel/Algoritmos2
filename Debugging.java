@@ -1,3 +1,5 @@
+// package aed;
+
 class Debugging {
     boolean xor(boolean a, boolean b) {
         return (a || b) && !(a && b);
