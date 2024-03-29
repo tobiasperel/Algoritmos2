@@ -23,7 +23,7 @@ class Funciones {
         for(int i = 1; i <=n; i++){
             total = total *i;
         }
-        return 0;
+        return total;
     }
 
     int factorialRecursivo(int n) {
@@ -34,7 +34,7 @@ class Funciones {
     }
 
     boolean esPrimo(int n) {
-        if (n == 1) {
+        if (n == 1 || n == 0) {
             return false;
         }
         for (int i = 2; i * i <= n; i++) {
