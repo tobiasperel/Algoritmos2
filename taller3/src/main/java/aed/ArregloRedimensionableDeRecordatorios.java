@@ -4,11 +4,15 @@ class ArregloRedimensionableDeRecordatorios implements SecuenciaDeRecordatorios 
     private Recordatorio[] arreglo;
     
     public ArregloRedimensionableDeRecordatorios() {
-        //
+        this.arreglo = new Recordatorio[0];
+
     }
 
     public ArregloRedimensionableDeRecordatorios(ArregloRedimensionableDeRecordatorios vector) {
-        throw new UnsupportedOperationException("No implementada aun");
+        this.arreglo = new Recordatorio[vector.longitud()];
+        for (int i = 0; i < vector.longitud(); i++) {
+            this.arreglo[i] = vector.obtener(i);
+        }
     }
 
     public int longitud() {
@@ -16,7 +20,11 @@ class ArregloRedimensionableDeRecordatorios implements SecuenciaDeRecordatorios 
     }
 
     public void agregarAtras(Recordatorio i) {
-        this.arreglo[this.arreglo.length] = i;
+        Recordatorio[] nuevoArreglo = new Recordatorio[arreglo.length + 1];
+        System.arraycopy(arreglo, 0, nuevoArreglo, 0, arreglo.length);
+        nuevoArreglo[arreglo.length] = i;
+        arreglo = nuevoArreglo;
+    
     }
 
     public Recordatorio obtener(int i) {
@@ -24,7 +32,9 @@ class ArregloRedimensionableDeRecordatorios implements SecuenciaDeRecordatorios 
     }
 
     public void quitarAtras() {
-        this.arreglo[this.arreglo.length] = null;
+        Recordatorio[] nuevoArreglo = new Recordatorio[arreglo.length -1];
+        System.arraycopy(arreglo, 0, nuevoArreglo, 0, arreglo.length - 1);
+        arreglo = nuevoArreglo;
     }
 
     public void modificarPosicion(int indice, Recordatorio valor) {

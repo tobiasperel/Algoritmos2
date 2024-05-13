@@ -1,31 +1,37 @@
-//package aed;
+package aed;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 public class Agenda {
     private Fecha fechaActual;
-    private Map<Fecha, List<Recordatorio>> recordatorios;
+    private Map <Fecha, List<Recordatorio>> recordatorios = new HashMap<>();
 
     public Agenda(Fecha fechaActual) {
         this.fechaActual = fechaActual;
     }
 
     public void agregarRecordatorio(Recordatorio recordatorio) {
-        recordatorios.get(fechaActual()).add(recordatorio);
+        if(!recordatorios.containsKey(recordatorio.fecha())) {
+            recordatorios.put(recordatorio.fecha(), new ArrayList<>(Arrays.asList(recordatorio)));
+        }
+        else{
+            recordatorios.get(recordatorio.fecha()).add(recordatorio);
+        }
     }
-
-
+    
     @Override
     public String toString() {
-        String recordatoriosString = fechaActual.dia() + "/" + fechaActual.mes() + "=====";
-       
-        for( Recordatorio recordatorio : recordatorios.get(fechaActual)){
-                recordatoriosString = recordatoriosString + "\n" +  recordatorio.mensaje() + " @ " + fechaActual.dia() + "/" + fechaActual.mes() + recordatorio.horario().hora() + ":" + recordatorio.horario().minutos();
-        }
-        return recordatoriosString;
+        return fechaActual + "\n=====\n" +
+            recordatorios.entrySet().stream()
+                    .filter(entry -> entry.getKey().equals(fechaActual))
+                    .flatMap(entry -> entry.getValue().stream())
+                    .map(Recordatorio::toString)
+                    .reduce("", (acc, recordatorio) -> acc + recordatorio + "\n");
+
     }
 
     public void incrementarDia() {
