@@ -1,78 +1,104 @@
-package aed;
+// package aed;
 
 import java.util.*;
 
 public class ListaEnlazada<T> implements Secuencia<T> {
     // Completar atributos privados
 
+    private int longitud = 0;
+    private Secuencia<T> secuencia;
+
     private class Nodo {
-        // Completar
+        T dato;
+        Nodo siguiente;
+        Nodo anterior;
+    
+        Nodo(T dato) {
+            this.dato = dato;
+            this.siguiente = null;
+            this.anterior = null;
+        }
     }
 
     public ListaEnlazada() {
-        throw new UnsupportedOperationException("No implementada aun");
+        secuencia = new ListaEnlazada<T>(this);
     }
 
     public int longitud() {
-        throw new UnsupportedOperationException("No implementada aun");
+        return longitud;
     }
 
     public void agregarAdelante(T elem) {
-        throw new UnsupportedOperationException("No implementada aun");
+        secuencia.agregarAdelante(elem);
+        longitud++;
     }
 
     public void agregarAtras(T elem) {
-        throw new UnsupportedOperationException("No implementada aun");
+        secuencia.agregarAdelante(elem);
+        longitud++;
+
     }
 
     public T obtener(int i) {
-        throw new UnsupportedOperationException("No implementada aun");
+       return secuencia.obtener(i);
+
     }
 
     public void eliminar(int i) {
-        throw new UnsupportedOperationException("No implementada aun");
+        secuencia.eliminar(i);
+        longitud--;
     }
 
     public void modificarPosicion(int indice, T elem) {
-        throw new UnsupportedOperationException("No implementada aun");
-    }
-
-    public ListaEnlazada<T> copiar() {
-        throw new UnsupportedOperationException("No implementada aun");
+        secuencia.modificarPosicion(indice, elem);
     }
 
     public ListaEnlazada(ListaEnlazada<T> lista) {
-        throw new UnsupportedOperationException("No implementada aun");
+        new ListaEnlazada<>(lista);
     }
     
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("No implementada aun");
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        Nodo actual = (Nodo) secuencia; // Change the type of 'actual' from Secuencia<T> to Nodo
+        while (actual != null) {
+            sb.append(actual.dato);
+            if (actual.siguiente != null) {
+                sb.append(", ");
+            }
+            actual = actual.siguiente;
+        }
+        sb.append("]");
+        return sb.toString();
     }
 
     private class ListaIterador implements Iterador<T> {
     	// Completar atributos privados
+        private Nodo actual;
+        private Nodo anterior;
+        private Nodo siguiente;
 
         public boolean haySiguiente() {
-	        throw new UnsupportedOperationException("No implementada aun");
+	        return actual.siguiente != null;
         }
         
         public boolean hayAnterior() {
-	        throw new UnsupportedOperationException("No implementada aun");
+	        return actual.anterior != null;
         }
 
         public T siguiente() {
-	        throw new UnsupportedOperationException("No implementada aun");
+	        return actual.siguiente.dato;
         }
         
 
         public T anterior() {
-	        throw new UnsupportedOperationException("No implementada aun");
+	        return actual.siguiente.dato;
         }
     }
 
     public Iterador<T> iterador() {
-	    throw new UnsupportedOperationException("No implementada aun");
+        return new ListaIterador();
     }
 
 }

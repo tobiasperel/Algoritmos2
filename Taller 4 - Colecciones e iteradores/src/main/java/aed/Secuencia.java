@@ -1,16 +1,7 @@
-package aed;
-
-
-class Nodo<T> {
-    T dato;
-    Nodo<T> siguiente;
-    Nodo<T> anterior;
-}
+// package aed;
 
 interface Secuencia<T> {
-    private Nodo<T> cabeza = null;
-    private Nodo<T> cola = null;
-    private int contador = 0;
+
     /**
      * Devuelve el largo de la secuencia.
      * 

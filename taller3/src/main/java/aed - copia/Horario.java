@@ -1,4 +1,4 @@
-// package aed;
+package aed;
 
 public class Horario {
     private int hora;

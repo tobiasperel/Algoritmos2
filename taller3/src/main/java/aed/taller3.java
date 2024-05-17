@@ -1,4 +1,5 @@
-package aed;
+// package aed;
+
 
 public class taller3 {
     public static void main(String[] args) {
@@ -68,6 +69,22 @@ public class taller3 {
         // } else {
         //     System.out.println("No funciona");
         // }
+        Fecha f = new Fecha(10, 6);
+        Horario h = new Horario(9, 45);
+        String mensaje = "Consulta con dentista";
+
+        Recordatorio recordatorio = new Recordatorio(mensaje, f, h);
+
+        System.out.println(recordatorio.fecha());
+        System.out.println(recordatorio.horario());
+        System.out.println(recordatorio.mensaje());
+
+        // Evitar aliasing.
+        f.incrementarDia();
+        Fecha f2 = recordatorio.fecha();
+        System.out.println(f2);
+        f2.incrementarDia();
+        System.out.println(recordatorio.fecha());
 
         // Fecha f11 = new Fecha(31, 12);
         // f11.incrementarDia();
@@ -123,6 +140,7 @@ public class taller3 {
         // String mensaje = "Consulta con dentista";
 
         // Recordatorio recordatorio = new Recordatorio(mensaje, f, h);
+        // System.out.println(recordatorio.fecha());
         // if(recordatorio.fecha().equals(f)){
         //     System.out.println("funciona");
         // } else {
@@ -144,31 +162,31 @@ public class taller3 {
         // //     System.out.println("No funciona");
         // // }
         // Agenda a = new Agenda(new Fecha(10, 05));
-        // // if(a.fechaActual().equals(new Fecha(10, 05))){
-        // //     System.out.println("funciona");
-        // // } else {
-        // //     System.out.println("No funciona");
-        // // }
+        // if(a.fechaActual().equals(new Fecha(10, 05))){
+        //     System.out.println("funciona");
+        // } else {
+        //     System.out.println("No funciona");
+        // }
         
-        // // a.agregarRecordatorio(new Recordatorio("Clase Algoritmos", new Fecha(10, 05), new Horario(17, 00)));
-        // // a.agregarRecordatorio(new Recordatorio("Labo Algoritmos", new Fecha(10, 05), new Horario(19, 00)));
+        // a.agregarRecordatorio(new Recordatorio("Clase Algoritmos", new Fecha(10, 05), new Horario(17, 00)));
+        // a.agregarRecordatorio(new Recordatorio("Labo Algoritmos", new Fecha(10, 05), new Horario(19, 00)));
         
-        // // String esperado = "10/5\n"
-        // //         .concat("=====\n")
-        // //         .concat("Clase Algoritmos @ 10/5 17:0\n")
-        // //         .concat("Labo Algoritmos @ 10/5 19:0\n");
-        // // System.out.println(a.toString());
+        // String esperado = "10/5\n"
+        //         .concat("=====\n")
+        //         .concat("Clase Algoritmos @ 10/5 17:0\n")
+        //         .concat("Labo Algoritmos @ 10/5 19:0\n");
+        // System.out.println(a.toString());
         
-        // // if(a.toString().equals(esperado)){
-        // //     System.out.println("funciona");
-        // // } else {
-        // //     System.out.println("No funciona");
-        // // }
+        // if(a.toString().equals(esperado)){
+        //     System.out.println("funciona");
+        // } else {
+        //     System.out.println("No funciona");
+        // }
         
         // a.agregarRecordatorio(new Recordatorio("Clase Algoritmos", new Fecha(10, 05), new Horario(17, 00)));
         // a.agregarRecordatorio(new Recordatorio("Partido de Fútbol", new Fecha(11, 05), new Horario(19, 00)));
         // a.agregarRecordatorio(new Recordatorio("Labo Algoritmos", new Fecha(10, 05), new Horario(19, 00)));
-        
+
         // String esperado = "10/5\n"
         //         .concat("=====\n")
         //         .concat("Clase Algoritmos @ 10/5 17:0\n")
@@ -181,7 +199,7 @@ public class taller3 {
         //     System.out.println("No funciona");
         // }
         // a.incrementarDia();
-        // // System.out.println(a.fechaActual());
+        // System.out.println(a.fechaActual());
 
         // if(a.fechaActual().equals(new Fecha(11, 05))){
         //     System.out.println("funciona");
@@ -197,21 +215,21 @@ public class taller3 {
         // } else {
         //     System.out.println("No funciona");
         // }
-        ArregloRedimensionableDeRecordatorios vector = new ArregloRedimensionableDeRecordatorios();
-        System.out.println(vector.longitud());
-        vector.agregarAtras(new Recordatorio("1", new Fecha(1, 1), new Horario(0, 0)));
-        vector.agregarAtras(new Recordatorio("2", new Fecha(1, 2), new Horario(0, 1)));
-        vector.agregarAtras(new Recordatorio("3", new Fecha(1, 3), new Horario(0, 2)));
-        vector.agregarAtras(new Recordatorio("4", new Fecha(1, 4), new Horario(0, 3)));
-        vector.agregarAtras(new Recordatorio("5", new Fecha(1, 5), new Horario(0, 4)));
-        System.out.println(vector.obtener(3));
-        System.out.println(new Recordatorio("4", new Fecha(1, 4), new Horario(0, 3)));
-        if(vector.obtener(3) == (new Recordatorio("1", new Fecha(1, 1), new Horario(0, 0)))){
-            System.out.println("funciona");
-        } else {
-            System.out.println("No funciona");
-        }
-        System.out.println("----------------------------------");
+        // ArregloRedimensionableDeRecordatorios vector = new ArregloRedimensionableDeRecordatorios();
+        // System.out.println(vector.longitud());
+        // vector.agregarAtras(new Recordatorio("1", new Fecha(1, 1), new Horario(0, 0)));
+        // vector.agregarAtras(new Recordatorio("2", new Fecha(1, 2), new Horario(0, 1)));
+        // vector.agregarAtras(new Recordatorio("3", new Fecha(1, 3), new Horario(0, 2)));
+        // vector.agregarAtras(new Recordatorio("4", new Fecha(1, 4), new Horario(0, 3)));
+        // vector.agregarAtras(new Recordatorio("5", new Fecha(1, 5), new Horario(0, 4)));
+        // System.out.println(vector.obtener(3));
+        // System.out.println(new Recordatorio("4", new Fecha(1, 4), new Horario(0, 3)));
+        // if(vector.obtener(3) == (new Recordatorio("1", new Fecha(1, 1), new Horario(0, 0)))){
+        //     System.out.println("funciona");
+        // } else {
+        //     System.out.println("No funciona");
+        // }
+        // System.out.println("----------------------------------");
         // vector.quitarAtras();
         // System.out.println(vector.longitud());
         // System.out.println(vector.obtener(3));
@@ -229,21 +247,21 @@ public class taller3 {
         // System.out.println(copiaDeVector.longitud());
         // System.out.println(copiaDeVector.obtener(2));
 
-        SecuenciaDeRecordatorios v = new ArregloRedimensionableDeRecordatorios();
-        v.agregarAtras(new Recordatorio("1", new Fecha(1, 1), new Horario(0, 0)));
-        v.agregarAtras(new Recordatorio("1", new Fecha(1, 1), new Horario(0, 0)));
-        v.agregarAtras(new Recordatorio("3", new Fecha(1, 3), new Horario(0, 2)));
-        v.agregarAtras(new Recordatorio("4", new Fecha(1, 4), new Horario(0, 3)));
-        v.agregarAtras(new Recordatorio("5", new Fecha(1, 5), new Horario(0, 4)));
+        // SecuenciaDeRecordatorios v = new ArregloRedimensionableDeRecordatorios();
+        // v.agregarAtras(new Recordatorio("1", new Fecha(1, 1), new Horario(0, 0)));
+        // v.agregarAtras(new Recordatorio("1", new Fecha(1, 1), new Horario(0, 0)));
+        // v.agregarAtras(new Recordatorio("3", new Fecha(1, 3), new Horario(0, 2)));
+        // v.agregarAtras(new Recordatorio("4", new Fecha(1, 4), new Horario(0, 3)));
+        // v.agregarAtras(new Recordatorio("5", new Fecha(1, 5), new Horario(0, 4)));
         
-        int i = 0;
-        for (; i < v.longitud() && !v.obtener(i).equals(new Recordatorio("5", new Fecha(1, 5), new Horario(0, 4))); i++) {
-        }
-        if (i < v.longitud()) {
-            System.out.println("funciona");
-        } else {
-            System.out.println("No funciona");
-        }
+        // int i = 0;
+        // for (; i < v.longitud() && !v.obtener(i).equals(new Recordatorio("5", new Fecha(1, 5), new Horario(0, 4))); i++) {
+        // }
+        // if (i < v.longitud()) {
+        //     System.out.println("funciona");
+        // } else {
+        //     System.out.println("No funciona");
+        // }
         
     }
     

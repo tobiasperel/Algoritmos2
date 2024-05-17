@@ -1,4 +1,4 @@
-// package aed;
+package aed;
 
 class ArregloRedimensionableDeRecordatorios implements SecuenciaDeRecordatorios {
     private Recordatorio[] arreglo;
