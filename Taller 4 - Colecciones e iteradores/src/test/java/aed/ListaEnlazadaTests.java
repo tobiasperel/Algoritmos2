@@ -314,21 +314,27 @@ class ListaEnlazadaTests {
         assertTrue(it.haySiguiente());
         assertFalse(it.hayAnterior());
         assertEquals(42, it.siguiente());
+
         assertTrue(it.haySiguiente());
         assertEquals(43, it.siguiente());
         assertTrue(it.hayAnterior());
+
         assertEquals(43, it.anterior());
         assertTrue(it.hayAnterior());
         assertEquals(42, it.anterior());
+
         assertFalse(it.hayAnterior());
         assertTrue(it.haySiguiente());
         assertEquals(42, it.siguiente());
+
         assertTrue(it.hayAnterior());
         assertTrue(it.haySiguiente());
         assertEquals(43, it.siguiente());
+
         assertTrue(it.hayAnterior());
         assertTrue(it.haySiguiente());
         assertEquals(44, it.siguiente());
+        
         assertFalse(it.haySiguiente());
         assertTrue(it.hayAnterior());
         assertEquals(44, it.anterior());
