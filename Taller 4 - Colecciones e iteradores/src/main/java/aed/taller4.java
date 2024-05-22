@@ -185,51 +185,56 @@ public class taller4 {
         // System.out.println(it.haySiguiente());
         // System.out.println(it.hayAnterior());
 
-        // ListaEnlazada<Integer> lista = new ListaEnlazada<>();
-        // lista.agregarAtras(42);
-        // lista.agregarAtras(43);
-        // lista.agregarAtras(44);
-        // Iterador<Integer> it = lista.iterador();
-        // System.out.println(it.haySiguiente());
-        // System.out.println(it.siguiente());
-        // System.out.println(it.haySiguiente());
-        // System.out.println(it.siguiente());
-        // System.out.println(it.haySiguiente());
-        // System.out.println(it.siguiente());
-        // System.out.println(it.haySiguiente());
-        
         ListaEnlazada<Integer> lista = new ListaEnlazada<>();
         lista.agregarAtras(42);
         lista.agregarAtras(43);
         lista.agregarAtras(44);
         Iterador<Integer> it = lista.iterador();
-        System.out.println("it.haySiguiente() = " + it.haySiguiente());
-        System.out.println("it.hayAnterior() = " + it.hayAnterior());
-        System.out.println("it.siguiente() = " + it.siguiente());
+        System.out.println(it.haySiguiente());
+        System.out.println(it.siguiente());
+        System.out.println(it.haySiguiente());
+        System.out.println(it.siguiente());
+        System.out.println(it.haySiguiente());
+        System.out.println(it.siguiente());
+        System.out.println(it.haySiguiente());
+        
+    //     ListaEnlazada<Integer> lista = new ListaEnlazada<>();
+    //     lista.agregarAtras(42);
+    //     lista.agregarAtras(43);
+    //     lista.agregarAtras(44);
+    //     Iterador<Integer> it = lista.iterador();
+    //     System.out.println("it.haySiguiente() = " + it.haySiguiente());
+    //     System.out.println("it.hayAnterior() = " + it.hayAnterior());
+    //     System.out.println("it.siguiente() = " + it.siguiente());
+    //     System.out.println("------------------------------------");
+    //     System.out.println("it.haySiguiente() = " + it.haySiguiente());
+    //     System.out.println("it.siguiente() = " + it.siguiente());
+    //     System.out.println("it.hayAnterior() = " + it.hayAnterior());
+    //     System.out.println("------------------------------------");
 
-        System.out.println("it.haySiguiente() = " + it.haySiguiente());
-        System.out.println("it.siguiente() = " + it.siguiente());
-        System.out.println("it.hayAnterior() = " + it.hayAnterior());
+    //     System.out.println("it.anterior() = " + it.anterior());
+    //     System.out.println("it.hayAnterior() = " + it.hayAnterior());
+    //     System.out.println("it.anterior() = " + it.anterior());
+    //     System.out.println("------------------------------------");
 
-        System.out.println("it.anterior() = " + it.anterior());
-        System.out.println("it.hayAnterior() = " + it.hayAnterior());
-        System.out.println("it.anterior() = " + it.anterior());
+    //     System.out.println("it.hayAnterior() = " + it.hayAnterior());
+    //     System.out.println("it.haySiguiente() = " + it.haySiguiente());
+    //     System.out.println("it.siguiente() = " + it.siguiente());
+    //     System.out.println("------------------------------------");
 
-        System.out.println("it.hayAnterior() = " + it.hayAnterior());
-        System.out.println("it.haySiguiente() = " + it.haySiguiente());
-        System.out.println("it.siguiente() = " + it.siguiente());
+    //     System.out.println("it.hayAnterior() = " + it.hayAnterior());
+    //     System.out.println("it.haySiguiente() = " + it.haySiguiente());
+    //     System.out.println("it.siguiente() = " + it.siguiente());
+    //     System.out.println("------------------------------------");
 
-        System.out.println("it.hayAnterior() = " + it.hayAnterior());
-        System.out.println("it.haySiguiente() = " + it.haySiguiente());
-        System.out.println("it.siguiente() = " + it.siguiente());
+    //     System.out.println("it.hayAnterior() = " + it.hayAnterior());
+    //     System.out.println("it.haySiguiente() = " + it.haySiguiente());
+    //     System.out.println("it.siguiente() = " + it.siguiente());
+    //     System.out.println("------------------------------------");
 
-        System.out.println("it.hayAnterior() = " + it.hayAnterior());
-        System.out.println("it.haySiguiente() = " + it.haySiguiente());
-        System.out.println("it.siguiente() = " + it.siguiente());
-
-        System.out.println("it.haySiguiente() = " + it.haySiguiente());
-        System.out.println("it.hayAnterior() = " + it.hayAnterior());
-        System.out.println("it.anterior() = " + it.anterior());
+    //     System.out.println("it.haySiguiente() = " + it.haySiguiente());
+    //     System.out.println("it.hayAnterior() = " + it.hayAnterior());
+    //     System.out.println("it.anterior() = " + it.anterior());
     }
 
 }

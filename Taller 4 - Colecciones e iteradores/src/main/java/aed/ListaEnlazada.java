@@ -1,4 +1,4 @@
-// package aed;
+package aed;
 
 import java.util.*;
 
@@ -135,47 +135,34 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     private class ListaIterador implements Iterador<T> {
     	// Completar atributos privados
         private Nodo<T> actual = cabeza;
-        private boolean haySiguiente = true;
-        private boolean hayAnterior = false;
+        private Nodo<T> anterior = null;
 
         public boolean haySiguiente() {
-            if (this.actual == null || this.actual.siguiente == null) {
-                return false;
-            }
-            return this.haySiguiente;
+            return actual != null;
         }
-        
+
         public boolean hayAnterior() {
-            if (this.actual == null || this.actual.anterior == null) {
-                return false;
-            }
-            return this.hayAnterior;
+            return anterior != null ;
         }
 
         public T siguiente() {
-            if (!this.haySiguiente) {
+            if (!haySiguiente()) {
                 throw new NoSuchElementException();
             }
-            T dato = this.actual.dato;
-            this.actual = this.actual.siguiente;
-            this.hayAnterior = true;
-            if (this.actual == null) {
-                this.haySiguiente = false;
-            }
+            T dato = actual.dato;
+            anterior = actual;
+            actual = actual.siguiente;
             return dato;
         }
-        
 
         public T anterior() {
-            if (!this.hayAnterior) {
+            if (!hayAnterior()) {
                 throw new NoSuchElementException();
             }
-            this.actual = this.actual.anterior;
-            this.haySiguiente = true;
-            if (this.actual == null) {
-                this.hayAnterior = false;
-            }
-            return this.actual.dato;
+            T dato = anterior.dato;
+            actual = anterior;
+            anterior = anterior.anterior;
+            return dato;
         }
     }
 
