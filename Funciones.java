@@ -1,3 +1,5 @@
+package aed;
+
 class Funciones {
 
     int cuadrado(int x) {
